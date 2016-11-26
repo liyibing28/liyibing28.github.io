@@ -7,4 +7,4 @@ keywords:
 description: 
 ---
 
-![skim](/public/img/pc/pcr_1.png)
+![skim](/public/img/pc/pcr_1.jpg)
