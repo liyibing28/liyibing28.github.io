@@ -4,18 +4,17 @@ markdown: redcarpet
 
 # 作者信息
 author: 
-  name: Anya Lin
-  email: lay.1010@hotmail.com
-  link: http://painterlin.com
-  weibo: http://weibo.com/orangeissweet
-  github: http://github.com/lay1010
-  music: http://site.douban.com/linanya
-  linkedin: https://www.linkedin.com/pub/anya-lin/81/91/232
+  name: 李大饼
+  email: l18081032600@163.com
+  link: liyibing28.github.com
+  github: http://github.com/liyibing
+#  music: http://site.douban.com/linanya
+#  linkedin: https://www.linkedin.com/pub/anya-lin/81/91/232
 
 # 站点信息
-title: 林安亚的博客
-description: My personal blog
-url: http://painterlin.com
+title: 李大饼的博客
+description: 李大饼的个人博客
+#url: http://painterlin.com
 rss_url: /pages/atom.xml
 
 # gavatar头像及Favicon
