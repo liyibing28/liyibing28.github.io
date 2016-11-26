@@ -1,7 +1,7 @@
 ---
 layout: post
 title: LaTeX beamer制作幻灯片
-category: 技术
+category: shezhi
 tags: LaTeX
 keywords: 
 description: 
