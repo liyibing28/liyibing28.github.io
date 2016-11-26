@@ -4,18 +4,18 @@ markdown: kramdown
 
 # 作者信息
 author: 
-  name: Anya Lin
-  email: lay.1010@hotmail.com
-  link: http://painterlin.com
-  weibo: http://weibo.com/orangeissweet
-  github: http://github.com/lay1010
-  music: http://site.douban.com/linanya
-  linkedin: https://www.linkedin.com/pub/anya-lin/81/91/232
+  name: 李大饼
+  email: liyibing28@gmail.com
+  link: http://liyibing28.github.io
+#  weibo: http://weibo.com/orangeissweet
+  github: http://github.com/liyibing28
+#  music: http://site.douban.com/linanya
+#  linkedin: https://www.linkedin.com/pub/anya-lin/81/91/232
 
 # 站点信息
-title: 林安亚的博客
+title: 李大饼的博客
 description: My personal blog
-url: http://painterlin.com
+url: http://liyibing28.github.io
 rss_url: /pages/atom.xml
 
 # gavatar头像及Favicon
