@@ -25,17 +25,17 @@ layout: base
                 <div class="col-md-8 col-xs-12">
                   <table class="table table-bordered">
                     <tbody>
-                      <tr><td>平台</td><td>{{ book.server }}</td></tr>
+                      <tr><td>来源</td><td>{{ book.server }}</td></tr>
                       <tr><td>语言</td><td>{{ book.language }}</td></tr>
-                      <tr><td>时间</td><td>{{book.begin}}--{{book.end}}</td></tr>
+                      <tr><td>时间</td><td>{{book.begin}} -- {{book.end}}</td></tr>
                       <tr>
                         <td>状态</td>
                         <td>
-                          {% if book.status == '已读' %}
+                          {% if book.status == '1' %}
                             <span class="label label-success">{{ book.status }}</span>
-                          {% elsif book.status == '在读' %}
+                          {% elsif book.status == '0' %}
                             <span class="label label-info">{{ book.status }}</span>
-                          {% elsif book.status == '未读' %}
+                          {% elsif book.status == '2' %}
                             <span class="label label-default">{{ book.status }}</span>
                           {% endif %}
                         </td></tr>
