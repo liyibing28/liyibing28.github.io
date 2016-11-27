@@ -31,11 +31,11 @@ layout: base
                       <tr>
                         <td>状态</td>
                         <td>
-                          {% if book.status == 1 %}
+                          {% if book.status == '已读' %}
                             <span class="label label-success">{{ book.status }}</span>
-                          {% elsif book.status == 0 %}
+                          {% elsif book.status == '在读' %}
                             <span class="label label-info">{{ book.status }}</span>
-                          {% elsif book.status == 2 %}
+                          {% elsif book.status == '未读' %}
                             <span class="label label-default">{{ book.status }}</span>
                           {% endif %}
                         </td></tr>
