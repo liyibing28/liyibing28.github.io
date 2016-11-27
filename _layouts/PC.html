@@ -16,7 +16,7 @@ layout: base
       {% for pc in page.PCs %}
         <div class="col-md-12">
           <div class="panel panel-primary">
-            <div class="panel-heading">{{ pc.title }}</div>
+            <div class="panel-heading">{{ pc.ID }}</div>
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-4 col-xs-12 center">
@@ -25,19 +25,20 @@ layout: base
                 <div class="col-md-8 col-xs-12">
                   <table class="table table-bordered">
                     <tbody>
-                      <tr><td style="width:80px;">from</td><td>{{ pc.from }}</td></tr>
-                      <tr><td>to</td><td>{{ pc.to }}</td></tr>
+                      <tr><td style="width:80px;">from-to</td><td>{{ pc.from-to }}</td></tr>
+                  <!--    <tr><td>to</td><td>{{ pc.to }}</td></tr> -->
                       <tr>
-                        <td>对方</td>
+                        <td>遥远的问候</td>
                         <td>
-                          <a href="{{ pc.alink }}" title="{{ pc.alink }}">{{ pc.author }}</a>
+                          <a href="https://www.postcrossing.com/user/{{ pc.alink }}" title="{{ pc.alink }}">{{ pc.author }}</a>
                         </td>
                       </tr>
-                 <!--     <tr><td>语言</td><td>{{ book.language }}</td></tr> -->
+                      <tr><td>距离</td><td>{{ pc.distance }}</td></tr>
+                      <tr><td>travel time</td><td>{{pc.travel-time}}</td></tr>
                       <tr>
                         <td>链接</td>
                         <td>
-                          <a href="{{ pc.link }}" title="{{ pc.link }}">明信片链接</a>
+                          <a href="https://www.postcrossing.com/postcards/{{ pc.ID }}" title="pc.link">明信片链接</a>
                         </td>
                       </tr>
                       <tr><td>描述</td><td>{{ pc.description }}</td></tr>
