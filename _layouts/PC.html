@@ -16,7 +16,9 @@ layout: base
       {% for pc in page.PCs %}
         <div class="col-md-12">
           <div class="panel panel-primary">
-            <div class="panel-heading">{{ pc.id }}</div>
+            <div class="panel-heading">
+              <a href="https://www.postcrossing.com/postcards/{{ pc.id }}" title="pc.link">{{ pc.id }}</a>
+            </div>
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-4 col-xs-12 center">
@@ -35,12 +37,6 @@ layout: base
                       </tr>
                       <tr><td>距离</td><td>{{ pc.distance }} km</td></tr>
                       <tr><td>用时</td><td>{{pc.travel}} day</td></tr>
-                      <tr>
-                        <td>链接</td>
-                        <td>
-                          <a href="https://www.postcrossing.com/postcards/{{ pc.id }}" title="pc.link">明信片链接</a>
-                        </td>
-                      </tr>
                       <tr><td>描述</td><td>{{ pc.description }}</td></tr>
                     </tbody>
                   </table>
