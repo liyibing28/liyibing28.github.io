@@ -1,3 +1,12 @@
+---
+layout: post
+title: warmshowers利用account实现账户管理
+category: 技术
+tags: warmshwoers android 学习
+keywords: 
+description: 
+---
+
 android学习～～利用google accountmanager实现账户管理
 
 为什么要学习accountmanager ，warmshowers android app中选择account进行管理。
