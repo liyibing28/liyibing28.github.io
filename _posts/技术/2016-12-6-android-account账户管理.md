@@ -92,7 +92,7 @@ public class AuthenticationTask extends AsyncTask<Void, Void, Void> {
     }
 ```
 - AuthenticationHelper 用于account管理，主要实现 在account中创建一个新账户 从accoutn中获取到warmshowers账户 获取账户cookie 获取账户uid 获取账户用户名 获取token（代替password）进行验证 删除账户 增加cookie
- - 创建新账户
+ - 创建新账户.
 ``` java
     public static Account createNewAccount(String username, String password) {
         AccountManager accountManager = AccountManager.get(WSAndroidApplication.getAppContext());
@@ -102,8 +102,7 @@ public class AuthenticationTask extends AsyncTask<Void, Void, Void> {
         return account;
     }
 ```
- - 在accountmanager中获取warmshowers账户
-
+ - 在accountmanager中获取warmshowers账户.
 ``` java
    		public static Account getWarmshowersAccount() throws NoAccountException {
         AccountManager accountManager = AccountManager.get(WSAndroidApplication.getAppContext());
@@ -115,3 +114,4 @@ public class AuthenticationTask extends AsyncTask<Void, Void, Void> {
         return accounts[0];
     }
 ```
+ - 
