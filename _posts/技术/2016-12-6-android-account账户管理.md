@@ -100,4 +100,18 @@ public class AuthenticationTask extends AsyncTask<Void, Void, Void> {
         accountManager.addAccountExplicitly(account, null, null);
         accountManager.setAuthToken(account, AuthenticationService.ACCOUNT_TYPE, password);
         return account;
-    } ```
+    }
+```
+ - 在accountmanager中获取warmshowers账户
+
+``` java
+   		public static Account getWarmshowersAccount() throws NoAccountException {
+        AccountManager accountManager = AccountManager.get(WSAndroidApplication.getAppContext());
+        Account[] accounts = accountManager.getAccountsByType(AuthenticationService.ACCOUNT_TYPE);
+        if (accounts.length == 0) {
+            throw new NoAccountException();
+        }
+
+        return accounts[0];
+    }
+```
