@@ -23,9 +23,28 @@ http://blog.csdn.net/wy3243996/article/details/52411139
 
 - AccountAuthenticatorActivity– “登录／创建用户“ Activity 的基类，当用户需要认证的时候， authenticato r调用会这个 Activity 。这个 Activity 负责用户登录或用户创建过程，并将auth-token返回给
 
-authenticator 。
+authenticator
+
 
 当你的App需要auth-token时，只需调用 AccountManager#getAuthToken() 。 AccountManager 将负责一切必须的步骤直到给你拿到auth-token。Google提供了一个流程图展现了整个过程：
 
 - mAuthTokenType 是我从服务器请求的令牌的类型
-- 
+
+
+####warmshower的大体结构实现为：
+1.  AuthenticatorActivity是唯一与用户交互的界面，继承自WSSupportAccountAuthenticatorActivity。主要进行与用户登录，注册，注销，更新页面的交互。 
+ - ``` java
+   public void applyCredentials(View view) {
+   
+        String username = editUsername.getText().toString();
+        String password = editPassword.getText().toString();
+        if (!username.isEmpty() && !password.isEmpty()) {
+            //mDialogHandler.showDialog(DialogHandler.AUTHENTICATE);
+            Account account = AuthenticationHelper.createNewAccount(username, password);
+            AuthenticationTask authTask = new AuthenticationTask();
+            authTask.execute();
+        }
+    }
+   ```
+   
+1.  WSSupportAccountAuthenticatorActivity继承自WSBaseActivity。
