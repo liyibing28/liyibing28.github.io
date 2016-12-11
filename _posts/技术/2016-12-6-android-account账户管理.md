@@ -30,12 +30,10 @@ authenticator
 
 - mAuthTokenType 是我从服务器请求的令牌的类型
 
-
-####warmshower的大体结构实现为：
+#### warmshower的大体结构实现为：
 1.  AuthenticatorActivity是唯一与用户交互的界面，继承自WSSupportAccountAuthenticatorActivity。主要进行与用户登录，注册，注销，更新页面的交互。 
  - ``` java
-   public void applyCredentials(View view) {
-   
+   public void applyCredentials(View view){
         String username = editUsername.getText().toString();
         String password = editPassword.getText().toString();
         if (!username.isEmpty() && !password.isEmpty()) {
