@@ -50,12 +50,11 @@ authenticator
   AuthenticationTask authTask = new AuthenticationTask();
            authTask.execute();
   ```
-```java
+  
 ​``` java
 public class AuthenticationTask extends AsyncTask<Void, Void, Void> {
         int mUID = 0;
         boolean mNetworkError = false;
-
         protected Void doInBackground(Void... params) {
 
             HttpAuthenticator authenticator = new HttpAuthenticator();
@@ -93,7 +92,7 @@ public class AuthenticationTask extends AsyncTask<Void, Void, Void> {
 ```
 - AuthenticationHelper 用于account管理，主要实现 在account中创建一个新账户 从accoutn中获取到warmshowers账户 获取账户cookie 获取账户uid 获取账户用户名 获取token（代替password）进行验证 删除账户 增加cookie
  - 创建新账户.
-``` java
+``` java``
     public static Account createNewAccount(String username, String password) {
         AccountManager accountManager = AccountManager.get(WSAndroidApplication.getAppContext());
         Account account = new Account(username, AuthenticationService.ACCOUNT_TYPE);
@@ -114,4 +113,12 @@ public class AuthenticationTask extends AsyncTask<Void, Void, Void> {
         return accounts[0];
     }
 ```
- - 
+ - ` java
+    public static Account createNewAccount(String username, String password) {
+        AccountManager accountManager = AccountManager.get(WSAndroidApplication.getAppContext());
+        Account account = new Account(username, AuthenticationService.ACCOUNT_TYPE);
+        accountManager.addAccountExplicitly(account, null, null);
+        accountManager.setAuthToken(account, AuthenticationService.ACCOUNT_TYPE, password);
+        return account;
+    }
+`
