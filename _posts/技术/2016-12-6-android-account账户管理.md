@@ -30,7 +30,7 @@ authenticator
 
 - mAuthTokenType 是我从服务器请求的令牌的类型
 
-#### warmshower的大体结构实现为：
+#### warmshower结构：
 - AuthenticatorActivity是唯一与用户交互的界面，继承自WSSupportAccountAuthenticatorActivity。主要进行与用户登录，注册，注销，更新页面的交互。 
  - ``` java
    public void applyCredentials(View view){
@@ -44,3 +44,50 @@ authenticator
         }
     }
    ```
+   ```Account account = AuthenticationHelper.createNewAccount(username, password);```
+   直接讲获取到的用户名密码传入createNewAccount函数，交给accountmanager进行管理，不用验证账户正确性。之后调用
+   ```
+   AuthenticationTask authTask = new AuthenticationTask();
+            authTask.execute();
+```
+进行账户验证。
+``` java
+public class AuthenticationTask extends AsyncTask<Void, Void, Void> {
+        int mUID = 0;
+        boolean mNetworkError = false;
+
+        protected Void doInBackground(Void... params) {
+
+            HttpAuthenticator authenticator = new HttpAuthenticator();
+            try {
+                mUID = authenticator.authenticate();
+            } catch (IOException e) {
+                mNetworkError = true;
+            } catch (JSONException e) {
+                mNetworkError = true;
+            } catch (Exception e) {
+                // mUid value will capture anything else.
+            }
+            return null;
+        }
+        protected void onPostExecute(Void v) {
+            //mDialogHandler.dismiss();
+
+            if (mUID < 1) {
+                if (mNetworkError) {
+                    Toast.makeText(AuthenticatorActivity.this, R.string.http_server_access_failure, Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(AuthenticatorActivity.this, R.string.authentication_failed, Toast.LENGTH_LONG).show();
+                }
+                AuthenticationHelper.removeOldAccount();
+                // And just stay on the page auth screen.
+            }
+            // Otherwise launch the maps activity, with no history
+            else {
+                Intent i = new Intent(AuthenticatorActivity.this, Map2Activity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                startActivity(i);
+            }
+        }
+    }
+    ```
