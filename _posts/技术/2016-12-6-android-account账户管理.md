@@ -30,28 +30,28 @@ authenticator
 
 - mAuthTokenType 是我从服务器请求的令牌的类型
 
-#### warmshower结构：
+### warmshower结构：
 - AuthenticatorActivity是唯一与用户交互的界面，继承自WSSupportAccountAuthenticatorActivity。主要进行与用户登录，注册，注销，更新页面的交互。 
  - ``` java
-   public void applyCredentials(View view){
-        String username = editUsername.getText().toString();
-        String password = editPassword.getText().toString();
-        if (!username.isEmpty() && !password.isEmpty()) {
-            //mDialogHandler.showDialog(DialogHandler.AUTHENTICATE);
-            Account account = AuthenticationHelper.createNewAccount(username, password);
-            AuthenticationTask authTask = new AuthenticationTask();
-            authTask.execute();
-        }
-    }
-   ```
-   ```Account account = AuthenticationHelper.createNewAccount(username, password);```
-   直接讲获取到的用户名密码传入createNewAccount函数，交给accountmanager进行管理，不用验证账户正确性。之后调用
-   ```
-   AuthenticationTask authTask = new AuthenticationTask();
-            authTask.execute();
-```
-进行账户验证。
-``` java
+  public void applyCredentials(View view){
+       String username = editUsername.getText().toString();
+       String password = editPassword.getText().toString();
+       if (!username.isEmpty() && !password.isEmpty()) {
+           //mDialogHandler.showDialog(DialogHandler.AUTHENTICATE);
+           Account account = AuthenticationHelper.createNewAccount(username, password);
+           AuthenticationTask authTask = new AuthenticationTask();
+           authTask.execute();
+       }
+   }
+  ```
+  ```Account account = AuthenticationHelper.createNewAccount(username, password);```
+  直接讲获取到的用户名密码传入createNewAccount函数，交给accountmanager进行管理，不用验证账户正确性。之后调用
+  ```
+  AuthenticationTask authTask = new AuthenticationTask();
+           authTask.execute();
+  ```
+```java
+​``` java
 public class AuthenticationTask extends AsyncTask<Void, Void, Void> {
         int mUID = 0;
         boolean mNetworkError = false;
@@ -84,10 +84,20 @@ public class AuthenticationTask extends AsyncTask<Void, Void, Void> {
             }
             // Otherwise launch the maps activity, with no history
             else {
-                Intent i = new Intent(AuthenticatorActivity.this, Map2Activity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                startActivity(i);
+                Intent intent = new Intent(AuthenticatorActivity.this, Map2Activity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                startActivity(intent);
             }
         }
     }
-    ```
+```
+- AuthenticationHelper 用于account管理，主要实现 在account中创建一个新账户 从accoutn中获取到warmshowers账户 获取账户cookie 获取账户uid 获取账户用户名 获取token（代替password）进行验证 删除账户 增加cookie
+ - 创建新账户
+``` java
+    public static Account createNewAccount(String username, String password) {
+        AccountManager accountManager = AccountManager.get(WSAndroidApplication.getAppContext());
+        Account account = new Account(username, AuthenticationService.ACCOUNT_TYPE);
+        accountManager.addAccountExplicitly(account, null, null);
+        accountManager.setAuthToken(account, AuthenticationService.ACCOUNT_TYPE, password);
+        return account;
+    } ```
