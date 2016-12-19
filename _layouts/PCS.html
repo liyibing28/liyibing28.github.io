@@ -1,0 +1,54 @@
+---
+layout: base
+---
+<div class="row">
+  <div class="col-md-13 aside3-title">
+    <br>
+    <h2 id="#identifier">{{ page.title }}</h2>
+  </div>
+  <div class="col-md-13 aside3-content">
+    <br />
+    <div id="content">
+      {{ content }}
+    </div>
+    <br />
+    <div class="row">
+      {% for pc in page.PCs %}
+        <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <a href="https://www.postcrossing.com/postcards/{{ pc.id }}" title="pc.link">{{ pc.id }}</a>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-4 col-xs-12 center">
+                  <img src="/public/img/pc/{{ pc.cover }}" alt="pc_pic" class="img-thumbnail">
+                </div>
+                <div class="col-md-8 col-xs-12">
+                  <table class="table table-bordered">
+                    <tbody>
+                      <tr><td style="width:80px;">from-to</td><td>{{ pc.from-to }}</td></tr>
+                  <!--    <tr><td>to</td><td>{{ pc.to }}</td></tr> -->
+                      <tr>
+                        <td>朋友</td>
+                        <td>
+                          <a href="https://www.postcrossing.com/user/{{ pc.author }}" title="{{ pc.alink }}">{{ pc.author }}</a>
+                        </td>
+                      </tr>
+                      <tr><td>距离</td><td>{{ pc.distance }} km</td></tr>
+                      <tr><td>用时</td><td>{{pc.travel}} day</td></tr>
+                      <tr><td>描述</td><td>{{ pc.description }}</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>  
+            </div>
+          </div>      
+        </div>
+      {% endfor %}
+    </div>
+    <hr>
+    {% include disqus.html %}
+  </div>
+</div>
+
