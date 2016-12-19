@@ -42,9 +42,9 @@ layout: base
                         <td>
                           {% if pc.status == 'traveling' %}
                             <span class="label label-success">{{ pc.status }}</span>
-                          {% elsif book.status == 'sent' %}
+                          {% elsif pc.status == 'sent' %}
                             <span class="label label-info">{{ pc.status }}</span>
-                          {% elsif book.status == 'expired' %}
+                          {% elsif pc.status == 'expired' %}
                             <span class="label label-info">{{ pc.status }}</span>
                           {% endif %}
                         </td>
