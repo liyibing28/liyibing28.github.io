@@ -27,17 +27,40 @@ layout: base
                 <div class="col-md-8 col-xs-12">
                   <table class="table table-bordered">
                     <tbody>
-                      <tr><td style="width:80px;">from-to</td><td>{{ pc.from-to }}</td></tr>
-                  <!--    <tr><td>to</td><td>{{ pc.to }}</td></tr> -->
                       <tr>
-                        <td>朋友</td>
+                        <td style="width:80px;">from-to</td>
+                        <td>{{ pc.from-to }}</td>
+                      </tr>
+                      <tr>
+                        <td>friend</td>
                         <td>
                           <a href="https://www.postcrossing.com/user/{{ pc.author }}" title="{{ pc.alink }}">{{ pc.author }}</a>
                         </td>
                       </tr>
-                      <tr><td>距离</td><td>{{ pc.distance }} km</td></tr>
-                      <tr><td>用时</td><td>{{pc.travel}} day</td></tr>
-                      <tr><td>描述</td><td>{{ pc.description }}</td></tr>
+                      <tr>
+                        <td>status</td>
+                        <td>
+                          {% if pc.status == 'traveling' %}
+                            <span class="label label-success">{{ pc.status }}</span>
+                          {% elsif book.status == 'sent' %}
+                            <span class="label label-info">{{ pc.status }}</span>
+                          {% elsif book.status == 'expired' %}
+                            <span class="label label-info">{{ pc.status }}</span>
+                          {% endif %}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>距离</td>
+                        <td>{{ pc.distance }} km</td>
+                      </tr>
+                      <tr>
+                        <td>用时</td>
+                        <td>{{pc.travel}} day</td>
+                      </tr>
+                      <tr>
+                        <td>description</td>
+                        <td>{{ pc.description }}</td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
