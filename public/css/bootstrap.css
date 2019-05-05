@@ -1169,7 +1169,7 @@ img {
     transition: all .2s ease-in-out;
     display: inline-block;
     width: 100% \9;
-    max-width: 100%;
+    max-width: 70%;
     height: auto
 }
 
