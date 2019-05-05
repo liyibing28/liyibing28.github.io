@@ -1,0 +1,42 @@
+---
+layout: base
+---
+<div class="row">
+  <div class="col-md-13 aside3-title">
+    <br>
+    <h2 id="#identifier">{{ page.title }}</h2>
+  </div>
+  <div class="col-md-13 aside3-content">
+    <br />
+    <div id="content">
+      {{ content }}
+    </div>
+    <br />
+    <div class="row">
+      {% for fragment in page.fragments %}
+        <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12 col-xs-12">
+                  <table class="table table-bordered">
+                    <tbody>
+                      <tr><td>来源</td><td>{{ fragment.text }}</td></tr>
+                      <tr>
+                        <td>comment</td>
+                        <td>{{ fragment.comment }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>  
+            </div>
+          </div>      
+        </div>
+      {% endfor %}
+    </div>
+    <hr>
+    {% include disqus.html %}
+  </div>
+</div>
+
