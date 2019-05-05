@@ -12,7 +12,8 @@ android学习～～利用google accountmanager实现账户管理
 为什么要学习accountmanager ，warmshowers android app中选择account进行管理。
 好处：标准的用户鉴权方式；为开发者简化了登录的流程；处理访问拒绝的场景；可以为一个账户处理不同类型的访问令牌（如：只读、全权限）；轻松的在不同程序间共享令牌；有如Sync Adapter这样的后台处理的良好支持；并且，在手机的设置界面中有一个很酷的入口
 
-### 参考资料： 
+### 参考资料：
+
 http://blog.csdn.net/wy3243996/article/details/52411139
 
 * Authentication Token：是由服务器提供的一个临时的访问令牌。所有需要识别用户的请求，在发送到服务器时都要带着这个令牌。

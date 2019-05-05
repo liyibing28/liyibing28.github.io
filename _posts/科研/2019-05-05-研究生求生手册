@@ -1,0 +1,66 @@
+---
+layout: post
+title: 研究生求生手册
+category: 科研
+tags: 笔记 心得
+keywords: 
+description: 
+---
+
+## 读论文
+
++ 了解作者诉求
++ 他对前人的批评推敲出该研究主题的考虑核心与评价的指标
++ 结合conclusion 看作者是否指出或暗示出该方法的弱点。然后再回到本文找出该方法的所有假设, 浏览一下本文对其研究成果的陈述。能了解一下几点
+  
+> + 根据该文的假设是否在现实上能够成立判断该研究成果的适用范围。 
+> + 根据该文主要成果与 Nature of the problem 判断该文的成果是否有重要参考价值。
+> + 根据 conclusion 所指出的缺限与从相关文献判断出来之 Nature of the problem 判断该文是否有任何隐藏的缺陷。 \
+
+最后根据以上判断总结该文之主要成果与主要缺陷, 并从而决定是否要细读该文。
+判断之后，看是否精读论文。精读论文避过proofs 和 mathmatical derivations。着重关注key ideas 和 key techniques
+
+> + What are the important considerations in the special topic of research (与以前从相关论文所得心得相互验证, 校正, 并总结)?
+> + What are the existing approaches for the special topic of research?
+> + What are their relative merits (优点) and disadvantages?
+> + If this paper has any relative merits, how are they achieved?
+> + If the paper has any disadvantages, what are the causes for them
+> + How to avoid such shortages in your proposed approach?
+> + If they are unavoidable, what are the reasons for?
+
+## Literature Survey
+
+读完Introduction设法回答
+
++ 这领域内最常被引述的方法有哪些?(2B)这些方法可以分成哪些主要派别?
++ 这些方法可以分成哪些主要派别?
++ 每个派别的主要特色(含优点和缺点)是什么?)每个派别的主要特色(含优点和缺点)是什么?
+在筛选到更加相关的论文之后，回答
++ 这个领域内大家认为重要的关键问题有哪些?有哪些特性是大家重视的优点?有哪些特性是大家在意的缺点?这些优点与缺点通常在哪些应用场合时会比较被重视?在哪些应用场合时比较不会被重视?
+
+在看是读main body，读懂
+
++ 这篇论文的主要假设是什么(在什么条件下它是有效的),并且评估一下这些假设在现实条件下有多容易(或多难)成立。愈难成立的假设,愈不好用,参考价值也愈低。
++ 在这些假设下,这篇论文主要有什么好处。 
++ 这些好处主要表现在哪些公式的哪些项目的简化上。
+
+根据这一派的主要假设以及上面的回答，回答
+
++ 这一派主要的缺点有哪些。
+
+## PPT报告
+
++ 第一页列出论文题目，作者，论文出处与年份
++ 每页只讲一个观念
++ 交代清楚论文的主要假设，主要公式与主要应用方式
++ 说明论文的范例，预测这个方法在不同场合可能会有的准确度或者好用程度 \
+
+  **个人的分析评价:**
+  
+> + 6A) 这篇论文最主要的创意是什么?
+> + (6B) 这些创意在应用上有什么好处?
+> + (6C)这些创意和应用上的好处是在哪些条件下才能成立?
+> + (6D)这篇论文最主要的缺点或局限是什么?
+> + (6E)这些缺点或局限在应用上有什么坏处?
+> + (6F)这些缺点和应用上的坏处是因为哪些因素而引入的?
+> + (6G)你建议学长学弟什么时候参考这篇论文的哪些部分(点子)?
