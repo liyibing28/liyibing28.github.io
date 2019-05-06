@@ -40,6 +40,23 @@ Therefore, some OT extensions are proposed. An OT extension protocol works by ru
 
 ### Contributions and Outline
 
+Present more efficient protocols for OT extensions.  
+Do not lower the number of hash function operation.  
+通过显著减少除散列函数之外的计算成本  
+To protect against our attack, a cryptographically strong random number generator needs to be used
+
++ Faster semi-honest base OT without random oracle.（随机预言）
+  > M. Naor and B. Pinkas. Efficient oblivious transfer protocols. In ACM-SIAM Symposium On Discrete Algorithms, SODA ’01, pages 448–457. Society for Industrial and Applied Mathematics, 2001.
+
+  这篇论文的的协议只能在随机预言模型中证明时安全的，所以论文之后给出了相对更慢但是安全性更高的算法
++ Faster OT extensions.  
+  Present an improved version of the original OT extension protocol of the paper
+  > Y. Ishai, J. Kilian, K. Nissim, and E. Petrank. Extending oblivious transfers efficiently. In Advances in Cryptology – CRYPTO’03, volume 2729 of LNCS, pages 145–161. Springer, 2003.  
+
+  Demonstrate how the OT extension protocol can be processed in independent blocks, allowing OT exten- sion to be parallelized and yielding a much faster runtime
++ Extended OT functionality. 针对特定场景进行优化
++ Experimental evaluation and applications.
+
 ### Assumptions
 
 1. semi-honest adversaries who follow the protocol, but may attempt to learn more than allowed via the protocol communication.
