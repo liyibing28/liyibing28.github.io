@@ -8,9 +8,9 @@ description: 这是ccs' 13上的一篇安全多方计算相关论文
 ---
 ## Info
 
-**Author:** Gilad Asharov, Yehuda Lindell  ||  Thomas Schneider, Michael Zohner \
-**Affliction:** Bar-Ilan University, Israel  ||  TU Darmstadt, Germany \
-**From:** CCS \
+**Author:** Gilad Asharov, Yehuda Lindell  ||  Thomas Schneider, Michael Zohner  
+**Affliction:** Bar-Ilan University, Israel  ||  TU Darmstadt, Germany  
+**From:** CCS  
 **Year:** 2013
 
 ## Abstract
@@ -30,7 +30,7 @@ Exposing many problems, including privacy-preserving data mining, anonymous tran
 
 Practical secure computation is feasiable but need to improve. Significant efficiency improve- ments can still be made, considerably broadening the tasks that can be solved using secure computation in practice.
 
-**Oblivious transfer and extensions** \
+**Oblivious transfer and extensions**  
 the efficient instantiation of OT is of crucial importance as is evident in many recent works that focus on efficiency（关注OT协议的实例化)
 > M. Naor and B. Pinkas. Efficient oblivious transfer protocols. In ACM-SIAM Symposium On Discrete Algorithms, SODA ’01, pages 448–457. Society for Industrial and Applied Mathematics, 2001.
 
@@ -46,7 +46,7 @@ Therefore, some OT extensions are proposed. An OT extension protocol works by ru
 
 ## Idea
 
-+ Why is the assumption that consider semi-honest adversary reasonable？\
++ Why is the assumption that consider semi-honest adversary reasonable？  
 **Answer:**
   + For computations between hospitals or companies that trust each other but need to run a secure protocol because of legal restrictions and/or in order to prevent inadvertent leakage
   + Understanding the cost of semi-honest security is an important stepping stone to efficient malicious security.
