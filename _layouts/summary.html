@@ -22,7 +22,7 @@ layout: base
                   <table class="table table-bordered summary-table">
                     <tbody>
                       <tr><td>原文</td><td>{{ fragment.text }}</td></tr>
-                      {% if book.comment %}
+                      {% if book.comment != null %}
                       <tr>
                         <td>comment</td>
                         <td>{{ fragment.comment }}</td>
