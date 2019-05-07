@@ -14,7 +14,7 @@ author:
 
 # 站点信息
 title: 李大饼的博客
-description: My personal blog
+description: Personal blog of liyibing, just for record life.
 url: http://liyibing28.github.io
 rss_url: /pages/atom.xml
 
@@ -37,7 +37,7 @@ active: 读书
 # 首页除了最新文章外显示分类
 cates: 
   - PC
-  - English
+  - 科研
 
 # 中文本地化
 locals:
