@@ -35,4 +35,10 @@ description:
 2. the communication cost for transmitting the circuits between the parties (2009)
 3. a new garbled circuit construction for two-party secure function
 4. improvement by a small factor are most welcome (2008)
-5. 
+
+## Info
+
+### ketwords
+
++ SFE
++ secure function evaluation
