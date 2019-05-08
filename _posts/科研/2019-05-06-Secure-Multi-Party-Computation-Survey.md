@@ -29,7 +29,9 @@ description:
 
 + qqq
 
-## 关注的主要问题
+## What are the important considerations in the special topic of research(关注的主要问题)
+
 
 1. efficient extention of Yao's construction to more relevant adversarial models（2009）
 2. the communication cost for transmitting the circuits between the parties (2009)
+3. a new garbled circuit construction for two-party secure function
