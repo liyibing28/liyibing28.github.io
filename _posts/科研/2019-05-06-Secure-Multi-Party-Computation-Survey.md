@@ -35,6 +35,8 @@ description:
 2. the communication cost for transmitting the circuits between the parties (2009)
 3. a new garbled circuit construction for two-party secure function
 4. improvement by a small factor are most welcome (2008)
+5. AES circuit
+6. large circuits
 
 ## Info
 
@@ -42,3 +44,13 @@ description:
 
 + SFE
 + secure function evaluation
+
+### Somthing need to know
+
++ random oracle model（随机预言模型）
++ cut-and-choose technique
++ Fair Play这篇文章
+
+## Questions
+
++ what is different between two-party and multi-party
