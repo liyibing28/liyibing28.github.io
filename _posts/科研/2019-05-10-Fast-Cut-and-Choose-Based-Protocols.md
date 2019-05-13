@@ -35,6 +35,15 @@ Protocols for cut-and-choose on garbled circuits [20,21,29,25] all work in the f
 
  Selective input attack whereby $P_1$ provides correct garbled inputs only for a subset of the possible inputs of $P_2$ must be prevented (since otherwise $P_2$ will abort if its input is not in the subset because it cannot compute any circuit in this case, and thus $P_1$ will learn something about $P_2$’s input based on whether or not it aborts).
 
+### Modified Batch Single-Chioce Cut-and-Choose OT
+
+It is used to make sure the subset of indices for which the receiver obtains both pairs is the same in all transfers.
+
+有欺骗的时候，获取两个值，没有欺骗的时候获取一个值（类似于常规的OT传输）
+
+modified在于 here the receiver can obtain both values in an unknown number of transfers, as it desires.  
+Therefore we need to introduce a mechanism enabling the receiver to prove to the sender in which transfers it did not receive both values, in a way that it cannot cheat.
+
 ## Some tips
 
 + 安全的定义
