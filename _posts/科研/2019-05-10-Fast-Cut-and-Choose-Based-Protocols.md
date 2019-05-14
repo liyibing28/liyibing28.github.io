@@ -65,7 +65,7 @@ In paper 21, it was shown that when s circuits are sent and half of them are ope
 
 Step | $p_1$ |  | $p_2$ |  |
 :-: | :-: | :-: | :-: | :-:
-1 | $a_1^0$ $a_1^1$...$a_l^0$$a_l^1$ <br> $r_1...r_s$ <br> $a_1^0$ $b_1^1$...$b_m^0$$b_m^1$ <br> $w_1...w_l$ <br> $w_{ij}$ <br> $k_{ij}^b$ <br> $w_i^‘$ |  |  | |
+1 | $a_1^0$ $a_1^1$ ... $a_l^0$$a_l^1$ <br> $r_1...r_s$ <br> $a_1^0$ $b_1^1$...$b_m^0$$b_m^1$ <br> $w_1...w_l$ <br> $w_{ij}$ <br> $k_{ij}^b$ <br> $w_i^‘$ |  |  | |
 2 | |  | iii | 000|
 
 ## Some tips
