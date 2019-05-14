@@ -7,6 +7,8 @@ keywords:
 description:
 ---
 
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
 ## Info
 
 ## Questions
@@ -56,6 +58,10 @@ It is used to make sure the subset of indices for which the receiver obtains bot
 
 modified在于 here the receiver can obtain both values in an unknown number of transfers, as it desires.  
 Therefore we need to introduce a mechanism enabling the receiver to prove to the sender in which transfers it did not receive both values, in a way that it cannot cheat.
+
+### what's the main idea of paper 21
+
+In paper 21, it was shown that when s circuits are sent and half of them are opened, the probability that P1can cheat is at most 2−0.311s.
 
 ### Analysis of protocol
 
