@@ -13,12 +13,13 @@ description:
 
 1. 这篇论文最主要的创意是什么?
    1. 采用了新的cut-and-choose技术
-   2. 并且在达到同样安全性的情况下，将GC从128减少到40, 极大提高了效率
+   2. 并且在达到同样安全性的情况下，将GC从128减少到40, 极大提高了效率 从the error becomes $2−{0.32s}$ to $2^{-s}$
    3. 为了作弊，所有评估的电路必须是不正确的，而不仅仅是以前工作中的大多数不正确就行了。in order to cheat, all of the evaluated circuits must be incorrect, and not just the majority as in previous works.
 2. 作者在这些创意的思想上，具体做了哪些工作？
    1. 
 3. 这些创意在应用上有什么好处?  
-   1. the method of cut-and-choose on garbled circuits is still the most efficient way of achieving security in the presence of covert and mali- cious adversaries.
+   1. the method of cut-and-choose on garbled circuits is still the most efficient way of achieving security in the presence of covert and malicious adversaries.
+   2. the bottleneck in protocols of this type is the computation and communication of the s garbled circuits. The AES computation is approximately 80% of the work. On large circuite, even taking 99.999% of the time.
 4. 这些创意和应用上的好处是在哪些条件下才能成立?(假设)  
    1. 构建在convert模型之上(where the adversary may behave maliciously but is guaranteed to be caught with probability ? if it does)
 5. 这篇论文最主要的缺点或局限是什么?  
