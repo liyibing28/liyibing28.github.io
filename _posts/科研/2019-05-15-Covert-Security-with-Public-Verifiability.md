@@ -29,11 +29,7 @@ description:
    1. we adapt the functionality such that only a malicious PAcan possibly cheat, as this is what is achieved by our protocol.
 5. 这篇论文最主要的缺点或局限是什么?  
 6. 这些缺点或局限在应用上有什么坏处?  
-   1. 
 7. 这些缺点和应用上的坏处是因为哪些因素而引入的? (If the paper has any disadvantages, what are the causes for them)
-   1. 
 8. 如何避免这个问题(How to avoid such shortages in your proposed approach?)
-   1. 
 9. 如果不能避免，是什么原因造成的(If they are unavoidable, what are the reasons for?)
-   1. 
 10. 你建议学长学弟什么时候参考这篇论文的哪些部分(点子)?
