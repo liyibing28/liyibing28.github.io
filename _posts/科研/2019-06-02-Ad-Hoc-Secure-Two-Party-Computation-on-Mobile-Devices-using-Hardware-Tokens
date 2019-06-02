@@ -1,0 +1,19 @@
+---
+layout: post
+title: Ad-Hoc Secure Two-Party Computation on Mobile Devices using Hardware Tokens
+category: 科研
+tags: 密码学 安全多方计算 论文 笔记
+keywords: 
+description:
+---
+
+### 这篇论文做了什么
+
+1. 在手机上优化实施了Goldreich-MicaliWigderson (GMW) 安全计算协议
+2. 通过 可信硬件令牌提高了性能
+
+### 手机和PC运行MPC的区别
+
+1. 手机性能低
+2. 无线连接带宽低，延时高
+3. 需要避免计算密集或需要长发送/接收操作的任务
