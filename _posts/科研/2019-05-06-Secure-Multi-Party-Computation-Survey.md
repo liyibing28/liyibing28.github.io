@@ -11,18 +11,6 @@ description:
 
 ## 分类
 
-### secret sharing
-
-**advantage:**  
-
-+ 主要应用在超过两方的协议，诚信方占多数
-
-**Disadvantage:**
-
-+ qqq
-
-### GC
-
 **advantage:**  
 
 + run in a constant number of communication bound
@@ -56,3 +44,10 @@ description:
 ## Questions
 
 + what is different between two-party and multi-party
+
+## 论文方向
+
+如何把安全多方计算运用在具体的网络中  
+
+1. 移动网络环境
+2. 云计算环境
