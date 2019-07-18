@@ -146,7 +146,64 @@ def model_fn():
 iterative_process = tff.learning.build_federated_averaging_process(model_fn)
 ```
 
+TFF构建了一对联合计算并将它们打包成tff.utils.IterativeProcess，其中这些计算可作为一对初始化和下一个属性使用。联合计算是TFF内部语言中可以表达各种联合算法的程序。在这种情况下，生成并打包到iterative_process中的两个计算实现联合平均。
 
+```python
+#@test {"output": "ignore"}
+str(iterative_process.initialize.type_signature)
+```
+
+虽然上面的类型签名可能起初看起来有点神秘，但您可以认识到服务器状态包含一个模型（MNIST的初始模型参数将分发给所有设备），以及optimizer_state（由服务器维护的附加信息， 例如用于超参数调度表的轮数等。
+
+```python
+state = iterative_process.initialize()
+```
+
+接下来，这对联合计算中的第二个表示单轮联合平均，其包括将服务器状态（包括模型参数）推送到客户端，对其本地数据进行设备上培训，收集和平均模型更新 ，并在服务器上生成新的更新模型。
+从概念上讲，您可以将下一步视为具有如下功能类型签名。
+SERVER_STATE，FEDERATED_DATA  - > SERVER_STATE，TRAINING_METRICS
+特别是，应该考虑next（）不是作为在服务器上运行的函数，而是作为整个分散计算的声明性功能表示 - 一些输入由服务器（SERVER_STATE）提供，但每个参与 设备提供自己的本地数据集。
+让我们进行一轮培训，并将结果可视化。 我们可以将上面已经生成的联合数据用于用户样本。
+
+```python
+#@test {"timeout": 600, "output": "ignore"}
+state, metrics = iterative_process.next(state, federated_train_data)
+print('round  1, metrics={}'.format(metrics))
+```
+
+让我们再进行几轮。 如前所述，通常在此时，您将从每轮随机选择的新用户样本中选择一部分模拟数据，以模拟用户不断进出的实际部署，但在这里， 为了演示，我们将重用相同的用户，以便系统快速收敛。
+
+```python
+#@test {"skip": true}
+for round_num in range(2, 11):
+  state, metrics = iterative_process.next(state, federated_train_data)
+  print('round {:2d}, metrics={}'.format(round_num, metrics))
+```
+
+#### Customizing the model implementation
+
+使用Keras重新构建模型
+
+```python
+MnistVariables = collections.namedtuple(
+    'MnistVariables', 'weights bias num_examples loss_sum accuracy_sum')
+```
+
+```python
+def create_mnist_variables():
+  return MnistVariables(
+      weights = tf.Variable(
+          lambda: tf.zeros(dtype=tf.float32, shape=(784, 10)),
+          name='weights',
+          trainable=True),
+      bias = tf.Variable(
+          lambda: tf.zeros(dtype=tf.float32, shape=(10)),
+          name='bias',
+          trainable=True),
+      num_examples = tf.Variable(0.0, name='num_examples', trainable=False),
+      loss_sum = tf.Variable(0.0, name='loss_sum', trainable=False),
+      accuracy_sum = tf.Variable(0.0, name='accuracy_sum', trainable=False))
+```
 
 ### Federated learning 高阶API
 
